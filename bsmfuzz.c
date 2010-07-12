@@ -73,7 +73,7 @@ usage(void)
 {
 
 	fprintf(stderr, "usage: bsmfuzz [-n tokens] [-N records] [-o file] "
-		"[-s seed] -b bits\n");
+		"[-s seed] -m bits\n");
 	exit(1);
 }
 
@@ -107,12 +107,12 @@ main(int argc, char **argv)
 	num_tokens = 1;
 
 	/* Parse command line arguments. */
-	while ((ch = getopt(argc, argv, "b:hn:N:o:s:")) != -1) {
+	while ((ch = getopt(argc, argv, "hm:n:N:o:s:")) != -1) {
 		switch(ch) {
-		case 'b':
+		case 'm':
 			bits = atoi(optarg);
 			if (bits != 32 && bits != 64)
-				errx(1, "Bits must be 32 or 64.");
+				errx(1, "Machine must be 32 or 64.");
 			break;
 
 		case 'n':
