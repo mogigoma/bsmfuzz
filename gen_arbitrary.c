@@ -55,7 +55,7 @@ gen_arbitrary(void)
 	count = random() % (256 - 4);
 
 	/* Generate the random data. */
-	buf = malloc(count * size + 1000);
+	buf = malloc(count * size);
 	if (buf == NULL)
 		err(1, "[malloc]");
 
