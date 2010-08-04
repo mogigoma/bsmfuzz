@@ -128,7 +128,7 @@ main(int argc, char **argv)
 			break;
 
 		case 'o':
-			fd = open(optarg, O_CREAT|O_TRUNC|O_WRONLY);
+			fd = open(optarg, O_CREAT|O_TRUNC|O_WRONLY, 0644);
 			if (fd < 0)
 				err(1, "Failed to open output file");
 			break;
